@@ -1,26 +1,18 @@
-import { Dispatch, PayloadAction } from "@reduxjs/toolkit";
-
+//Redux
+import { Dispatch } from "@reduxjs/toolkit";
+//Slices
 import { startLoadingSearch, setResults } from "../search/searchSlice";
+//Axios
 import { searchItems } from "../../../api/searchItemsApi";
-import {
-  Item,
-  SearchResult,
-  ItemJson,
-  Category,
-  AvailableFilter,
-} from "../../../interfaces/interfaces";
-import { useState } from "react";
+//Interfaces
+import { Item, ItemJson } from "../../../interfaces/interfaces";
 
-interface Catn {
-  id: string;
-  times: number;
-}
 export const getResults = (product = "") => {
   return async (dispatch: Dispatch, getState: number) => {
     dispatch(startLoadingSearch());
     let itemsList: ItemJson[] = [];
     const { data } = await searchItems(`${product}`);
-    const { results = [], available_filters = [] } = data;
+    const { results = [] } = data;
 
     const orderCategory = (result: []) => {
       const organizer: string[] = [];
@@ -28,14 +20,16 @@ export const getResults = (product = "") => {
 
       result.forEach(({ category_id }) => organizer.push(category_id));
 
-      let counter: [] = organizer.reduce((counter: any, key) => {
+      let catogoryFilter: [] = organizer.reduce((counter: any, key) => {
         counter[key] = 1 + counter[key] || 1;
         return counter;
       }, {});
 
-      let sorted_counter = Object.entries(counter).sort((a, b) => b[1] - a[1]);
+      let sortedCategory = Object.entries(catogoryFilter).sort(
+        (a, b) => b[1] - a[1]
+      );
 
-      sorted_counter.map((d) =>
+      sortedCategory.map((d) =>
         result.map((e: any) => {
           if (orderByCategory.length < 4) {
             if (d[0] === e.category_id) {
@@ -49,7 +43,7 @@ export const getResults = (product = "") => {
 
       return orderByCategory;
     };
-
+    //Parsing JSON
     orderCategory(results).map(
       ({
         id,
@@ -77,6 +71,7 @@ export const getResults = (product = "") => {
           city_name,
         })
     );
+    //Dispatch Camilo Lopez sing in new Json
     dispatch(
       setResults({
         author: {

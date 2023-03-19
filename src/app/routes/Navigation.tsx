@@ -1,5 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+//Router
+import { Route, Routes } from "react-router-dom";
+//Components
 import { SearchBox, SearchDetails, SearchResults } from "../components";
 
 export const Navigation = () => {

@@ -1,7 +1,7 @@
+//Redux
 import { createSlice } from "@reduxjs/toolkit";
+//Interfaces
 import { ItemJsonById } from "../../../interfaces/interfaces";
-
-// const initialState: SearchResult[]={};
 
 const result: ItemJsonById = {
   id: "",

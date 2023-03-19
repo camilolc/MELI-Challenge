@@ -1,4 +1,6 @@
+//Redux
 import { configureStore } from "@reduxjs/toolkit";
+//Slices
 import { searchSlice } from "./slices/search/searchSlice";
 import { searchSlicebyId } from "./slices/searchById/searchByIdSlice";
 

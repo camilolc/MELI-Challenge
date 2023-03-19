@@ -1,0 +1,62 @@
+.search-result-component{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+
+}
+
+.search-result-container{
+	background-color: #FFFFFF;
+	height: auto;
+	width: 75%;
+}
+
+.search-result-box{
+	display: flex;
+	flex-direction: row;
+	padding: 16px;
+	align-items: center;
+}
+
+.search-result-info{
+	display: flex;
+	flex-direction: column;
+	margin-left: 16px;
+}
+
+.search-result-img{
+	border-radius: 4px;
+	height: 180px;
+	width: 180px;
+}
+
+.search-result-price{
+	align-items: center;
+	display: flex;
+	font-size: 24px;
+	margin-bottom: 32px;	
+	
+}
+
+.search-result-icon{
+	margin-left: 8px;
+}
+
+.search-result-font-Title{
+	font-size: 18px;
+	text-transform: capitalize;
+}
+
+.search-result-city{
+	margin-inline-start: auto;
+	margin-right: 5%;
+	font-size: 12px;
+}
+
+.search-result-separator{
+	margin-left: 16px;
+	margin-right: 16px;
+	background-color: #EEEEEE ;
+	height: 1px;
+	border:0
+}

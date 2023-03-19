@@ -1,0 +1,83 @@
+.search-detail-component{
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.search-detail-container{
+	background-color: #FFFFFF;
+	height: auto;
+	width: 75%;
+}
+.search-detail-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 100px;
+	margin-left: 70px;
+	margin-top: 32px;
+}
+
+.search-detail-info{
+	display: flex;
+	flex-direction: column;
+	margin-inline-start: auto;
+	margin-right: 5%;
+	width: 220px;
+}
+
+.search-detail-img{
+	border: 1px solid #EEEEEE;
+	border-radius: 4px;
+	height: auto;
+	margin-right: 5%;
+	width: 50%;
+}
+.search-detail-sold{
+	margin-bottom: 16px;
+	text-transform: capitalize;
+}
+
+.search-detail-title{
+	font-size: 24px;
+	margin-bottom: 32px;
+}
+
+.search-detail-pay{
+	margin-bottom: 32px;
+}
+
+.search-detail-price{
+	align-items: self-start;
+	display: flex;
+	font-size: 46px;
+}
+.search-detail-dec{
+	font-size: 20px;
+}
+.search-detail-button{
+	background-color: #3483FA;
+	border: none;
+	border-radius: 8px;
+	color: #FFFFFF;
+	cursor: pointer;
+	height: 50px;
+	width: 90%;
+}
+
+.search-detail-desc{
+	margin-left: 40px;
+	text-align: justify;
+	width: 70%;
+}
+.search-detail-desc-title{
+	font-size: 28px;
+	font-weight: lighter;
+	margin-bottom: 32px;
+}
+
+.search-detail-desc-parr{
+	color: #999999 ;
+	font-size: 16px;
+	margin-bottom: 32px;
+}

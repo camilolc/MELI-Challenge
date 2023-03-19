@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import { json, useLocation, useParams } from "react-router-dom";
+//Redux
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { getResultById } from "../store/slices/searchById/thunk";
-
+//Router
+import { useParams } from "react-router-dom";
 //Css
 import "../styles/searchDetails.css";
-import { ItemJsonById } from "../interfaces/interfaces";
-//Assets
 
 export const SearchDetails = () => {
+  //Redux
   const {
     result: {
       picture,
@@ -19,13 +19,12 @@ export const SearchDetails = () => {
       price: { amount, decimals },
       description,
     },
-    author,
     isLoading,
   } = useSelector((state: RootState) => state.searchById);
-  const { id } = useParams();
-
   const dispatch: any = useDispatch();
-
+  //Query string
+  const { id } = useParams();
+  //Hooks
   useEffect(() => {
     dispatch(getResultById(id!));
   }, []);

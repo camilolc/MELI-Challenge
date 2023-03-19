@@ -1,28 +1,30 @@
-import React from "react";
+//Redux
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { ItemJson } from "../interfaces/interfaces";
-import { useLocation, useNavigate } from "react-router-dom";
 import { getResults } from "../store/slices/search/thunk";
+//Router
+import { useLocation, useNavigate } from "react-router-dom";
 //Css
 import "../styles/searchResult.css";
-
 //Assets
 import Shipping from "../../assets/ic_shipping.png";
 
 export const SearchResults = () => {
+  //Redux
   const { results, isLoading, author } = useSelector(
     (state: RootState) => state.search
   );
-  const navigate = useNavigate();
   const dispatch: any = useDispatch();
+  //Query string
   const query = new URLSearchParams(useLocation().search);
   const productName = query.get("search");
-
+  //Hooks
+  const navigate = useNavigate();
+  //Functions
   const itemDetail = (id: string) => {
     navigate(`${id}`);
   };
-
+  
   if (results.length == 0 && Object.keys(author).length === 0) {
     dispatch(getResults(productName ? productName : ""));
   }

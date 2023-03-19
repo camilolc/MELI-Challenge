@@ -1,7 +1,8 @@
-import React, { ChangeEvent, useState, KeyboardEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 //Redux
-import { DispatchProp, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getResults } from "../store/slices/search/thunk";
+import { Dispatch } from "@reduxjs/toolkit";
 //Router
 import { Outlet, useNavigate } from "react-router-dom";
 //Css
@@ -9,7 +10,6 @@ import "../styles/searchBox.css";
 //Assets
 import Logo from "../../assets/Logo_ML.png";
 import SearchIcon from "../../assets/ic_Search@2x.png";
-import { Action, AnyAction, Dispatch, ThunkDispatch } from "@reduxjs/toolkit";
 
 export const SearchBox = () => {
   //Redux
